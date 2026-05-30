@@ -96,6 +96,7 @@ static void inotify_fdinfo(struct seq_file *m, struct fsnotify_mark *mark)
 	struct inode *inode;
 #ifdef CONFIG_KSU_SUSFS_SUS_MOUNT
 	struct mount *mnt = NULL;
+	u32 mask;
 #endif
 
 	if (mark->connector->type != FSNOTIFY_OBJ_TYPE_INODE)
@@ -127,7 +128,7 @@ static void inotify_fdinfo(struct seq_file *m, struct fsnotify_mark *mark)
 			}
 			seq_printf(m, "inotify wd:%x ino:%lx sdev:%x mask:%x ignored_mask:0 ",
 					inode_mark->wd, path.dentry->d_inode->i_ino, path.dentry->d_inode->i_sb->s_dev,
-					inotify_mark_user_mask(mark));
+					(mark->mask & IN_ALL_EVENTS));
 			show_mark_fhandle(m, path.dentry->d_inode);
 			seq_putc(m, '\n');
 			path_put(&path);
@@ -143,7 +144,7 @@ orig_flow:
 #endif // #ifdef CONFIG_KSU_SUSFS_SUS_MOUNT
 		seq_printf(m, "inotify wd:%x ino:%lx sdev:%x mask:%x ignored_mask:0 ",
 			   inode_mark->wd, inode->i_ino, inode->i_sb->s_dev,
-			   inotify_mark_user_mask(mark));
+			   (mark->mask & IN_ALL_EVENTS));
 		show_mark_fhandle(m, inode);
 		seq_putc(m, '\n');
 		iput(inode);
@@ -159,7 +160,8 @@ void inotify_show_fdinfo(struct seq_file *m, struct file *f)
 
 #ifdef CONFIG_FANOTIFY
 
-static void fanotify_fdinfo(struct seq_file *m, struct fsnotify_mark *mark)
+static void fanotify_fdinfo(struct seq_file *m, struct fsnotify_mark *mark,
+			    struct file *file __maybe_unused)
 {
 	unsigned int mflags = 0;
 	struct inode *inode;
