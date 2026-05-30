@@ -18,4 +18,3 @@ make -j2 O=$OUT_DIR ARCH=arm64 CROSS_COMPILE=$GCC_64 CROSS_COMPILE_ARM32=$GCC_32
 make -j2 O=$OUT_DIR ARCH=arm64 CROSS_COMPILE=$GCC_64 CROSS_COMPILE_ARM32=$GCC_32 CC=clang CLANG_TRIPLE=aarch64-linux-gnu-
 
 cp $OUT_DIR/arch/arm64/boot/Image $KERNEL_DIR/arch/arm64/boot/Image
-cp $OUT_DIR/arch/arm64/boot/Image $KERNEL_DIR/arch/arm64/boot/Image.gz
