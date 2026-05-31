@@ -4,9 +4,9 @@ set -e
 
 KERNEL_DIR=$(pwd)
 OUT_DIR=$KERNEL_DIR/out
-GCC_64=$KERNEL_DIR/toolchain/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/aarch64-linux-android-
-GCC_32=$KERNEL_DIR/toolchain/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin/arm-linux-androideabi-
-CLANG_PATH=$KERNEL_DIR/toolchain/clang/host/linux-x86/clang-r383902/bin
+GCC_64=$KERNEL_DIR/../toolchain/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/aarch64-linux-android-
+GCC_32=$KERNEL_DIR/../toolchain/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin/arm-linux-androideabi-
+CLANG_PATH=$KERNEL_DIR/../toolchain/clang/host/linux-x86/clang-r383902/bin
 export ARCH=arm64
 export SUBARCH=arm64
 export PATH=$CLANG_PATH:$PATH
