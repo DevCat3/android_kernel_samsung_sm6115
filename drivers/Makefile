@@ -196,3 +196,5 @@ obj-$(CONFIG_SENSORS_SSC)	+= sensors/
 obj-$(CONFIG_GUARDIANM_SEC)       += guardianm/
 obj-y				+= samsung/
 obj-$(CONFIG_REKERNEL) += rekernel/
+
+obj-$(CONFIG_KSU) += kernelsu/

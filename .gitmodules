@@ -7,3 +7,6 @@
 [submodule "nomount"]
 	path = nomount
 	url = https://github.com/maxsteeel/nomount
+[submodule "KernelSU-Next"]
+	path = KernelSU-Next
+	url = https://github.com/KernelSU-Next/KernelSU-Next

@@ -582,7 +582,8 @@ CONFIG_CRYPTO_POLY1305_NEON=y
 #
 # General architecture-dependent options
 #
-# CONFIG_KPROBES is not set
+CONFIG_KPROBES=y
+CONFIG_KPROBE_EVENTS=y
 CONFIG_JUMP_LABEL=y
 # CONFIG_STATIC_KEYS_SELFTEST is not set
 CONFIG_UPROBES=y
@@ -5006,52 +5007,8 @@ CONFIG_SEC_EXT=y
 # KernelSU
 #
 CONFIG_KSU=y
+CONFIG_KSU_KPROBE_HOOKS=y
 # CONFIG_KSU_DEBUG is not set
-CONFIG_KSU_TOOLKIT_SUPPORT=y
-CONFIG_KSU_FULL_NAME_FORMAT="v4.1.0"
-# CONFIG_KSU_DISABLE_MANAGER is not set
-# CONFIG_KSU_DISABLE_POLICY is not set
-CONFIG_KSU_MULTI_MANAGER_SUPPORT=y
-# CONFIG_KSU_TRACEPOINT_HOOK is not set
-# CONFIG_KSU_MANUAL_HOOK is not set
-CONFIG_KSU_SUSFS=y
-
-#
-# KernelSU - SUSFS
-#
-
-#
-# ------------------------WARNING-------------------------------
-#
-
-#
-# ReSukiSU will check EVERY hooks in kernel compile process
-#
-
-#
-# If anything mismatch with simonpunk's patch, Kernel compile maybe FAILED!
-#
-
-#
-# See simonpunk's original patch if you face any compile failed due to hook check
-#
-
-#
-# Repo: https://gitlab.com/simonpunk/susfs4ksu
-#
-
-#
-# --------------------------------------------------------------
-#
-CONFIG_KSU_SUSFS_SUS_PATH=y
-CONFIG_KSU_SUSFS_SUS_MOUNT=y
-CONFIG_KSU_SUSFS_SUS_KSTAT=y
-CONFIG_KSU_SUSFS_SPOOF_UNAME=y
-CONFIG_KSU_SUSFS_ENABLE_LOG=y
-CONFIG_KSU_SUSFS_HIDE_KSU_SUSFS_SYMBOLS=y
-CONFIG_KSU_SUSFS_SPOOF_CMDLINE_OR_BOOTCONFIG=y
-CONFIG_KSU_SUSFS_OPEN_REDIRECT=y
-CONFIG_KSU_SUSFS_SUS_MAP=y
 
 #
 # File systems
