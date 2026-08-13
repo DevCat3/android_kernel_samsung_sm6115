@@ -237,4 +237,6 @@ source "drivers/energy_model/Kconfig"
 source "drivers/guardianm/Kconfig"
 
 source "drivers/samsung/Kconfig"
+
+source "drivers/rekernel/Kconfig"
 endmenu
