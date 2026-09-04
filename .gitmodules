@@ -3,4 +3,5 @@
 	url = https://github.com/Sakion-Team/Re-Kernel
 [submodule "KernelSU"]
 	path = KernelSU
-	url = https://github.com/ReSukiSU/ReSukiSU
+	url = https://github.com/KeiraOMG0/ReSukiSU
+	branch = main-with-sucompat-fix
