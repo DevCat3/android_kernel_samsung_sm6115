@@ -18,3 +18,9 @@ config QCA_CLD_WLAN_PROFILE
 	  Profiles are located at drivers/staging/qcacld-3.0/configs.
 
 endif # QCA_CLD_WLAN
+
+config FEATURE_FRAME_INJECTION_SUPPORT
+	tristate "Packet Injection"
+	default y
+	help
+	  Add support for packet injection
