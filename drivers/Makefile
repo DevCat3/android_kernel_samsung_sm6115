@@ -195,3 +195,4 @@ obj-$(CONFIG_SENSORS_SSC)	+= sensors/
 # Bug 702116,zhanghao3.wt,mod,20211125,for GuardianM bring up
 obj-$(CONFIG_GUARDIANM_SEC)       += guardianm/
 obj-y				+= samsung/
+obj-$(CONFIG_REKERNEL) += rekernel/
