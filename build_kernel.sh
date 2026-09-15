@@ -14,8 +14,8 @@ export PATH=$CLANG_PATH:$PATH
 #rm -rf $OUT_DIR
 #mkdir -p $OUT_DIR
 
-make -j2 O=$OUT_DIR ARCH=arm64 CROSS_COMPILE=$GCC_64 CROSS_COMPILE_ARM32=$GCC_32 CC=clang CLANG_TRIPLE=aarch64-linux-gnu- gta4l_eur_open_defconfig
-make -j2 O=$OUT_DIR ARCH=arm64 CROSS_COMPILE=$GCC_64 CROSS_COMPILE_ARM32=$GCC_32 CC=clang CLANG_TRIPLE=aarch64-linux-gnu-
+make -j12 O=$OUT_DIR ARCH=arm64 CROSS_COMPILE=$GCC_64 CROSS_COMPILE_ARM32=$GCC_32 CC=clang CLANG_TRIPLE=aarch64-linux-gnu- gta4l_eur_open_defconfig
+make -j12 O=$OUT_DIR ARCH=arm64 CROSS_COMPILE=$GCC_64 CROSS_COMPILE_ARM32=$GCC_32 CC=clang CLANG_TRIPLE=aarch64-linux-gnu-
 
 cp $OUT_DIR/arch/arm64/boot/Image $KERNEL_DIR/arch/arm64/boot/Image
 cp $OUT_DIR/arch/arm64/boot/Image $KERNEL_DIR/arch/arm64/boot/Image.gz

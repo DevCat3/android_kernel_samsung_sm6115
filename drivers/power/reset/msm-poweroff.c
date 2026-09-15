@@ -199,7 +199,7 @@ static bool get_dload_mode(void)
 	return dload_mode_enabled;
 }
 
-static void enable_emergency_dload_mode(void)
+static void __maybe_unused enable_emergency_dload_mode(void)
 {
 #ifndef WT_FINAL_RELEASE
 	int ret;
